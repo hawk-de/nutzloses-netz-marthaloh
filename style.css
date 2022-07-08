@@ -4,9 +4,10 @@ html {
 
 body {
   background-color: white;
-  display: flex;
+  /*display: flex;*/
   margin: 0 0;
   color: #1d2429;
+  float:left;
 }
 /*
  see A Complete Guide to Flexbox
@@ -14,10 +15,18 @@ body {
  */
 .container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /*align-items: left;*/
+  /*justify-content: left;*/
   height: 100vh;
 }
 .flex-item {
-  align-self: center;
+  /*align-self: center;*/
+}
+#texteditor {
+  font-family: 'Fira Mono', monospace;
+  height:fit-content;
+}
+#cursor {
+  float:left;
+  height:fit-content;
 }
