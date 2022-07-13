@@ -3,7 +3,7 @@ html {
 } /*16px*/
 
 body {
-  background-color: white;
+  background-color: rgb(255,255,255);
   /*display: flex;*/
   margin: 0 0;
   color: #1d2429;
@@ -24,8 +24,18 @@ body {
 }
 #texteditor {
   font-family: 'Fira Mono', monospace;
+  font-size: 2vw;
   height:fit-content;
+  margin-top: 8vw;
+  margin-bottom: 20px;
+  margin-right: 12vw;
+  margin-left: 12vw;
 }
+
+#body {
+  background-color: rgb(255, 255, 255);
+}
+
 #cursor {
   float:left;
   height:fit-content;
