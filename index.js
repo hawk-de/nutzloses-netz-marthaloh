@@ -12,7 +12,7 @@
 
 const text1 = "Hallo! Ich bin ein nutzloser Texteditor. Hier kannst du deine Texte eintippen. Probier es aus! Finger auf die Tastatur und los geht es! Keine Scheu, schreib einfach drauf los.  Unterbrich mich ruhig. Doch sei gewarnt: Verärgere mich nicht zu sehr, sonst verweigere ich mich. Und lass mich nicht zu lange warten, ich bin sehr  ungeduldig und werde bei Langeweile schnell schludrig.";
 const text = text1.slice();
-let i = 1;
+let speed = 1;
 let letter = 0;
 let editortext = [];
 let showntext;
@@ -36,12 +36,12 @@ counter.innerHTML = deletedletters;
 
 function draw() {
 
-  if(frameCount >= i) {
+  if(frameCount >= speed) {
     editortext.push(text[letter]);
     showntext = editortext.join('');
     texteditor.innerHTML = showntext;
     letter++;
-    i += random(14,15);
+    speed += random(1,15);
   }
 
   firstchar = editortext.slice(0,1);
