@@ -22,21 +22,35 @@ body {
 .flex-item {
   /*align-self: center;*/
 }
-#texteditor {
+
+
+#body {
+  background-color: rgb(255, 255, 255);
+}
+
+#counter {
   font-family: 'Fira Mono', monospace;
   font-size: 2vw;
-  height:fit-content;
+  height: fit-content;
+  margin-top: 8vw;
+  margin-left: 1vw;
+}
+
+#div {
   margin-top: 8vw;
   margin-bottom: 20px;
   margin-right: 12vw;
   margin-left: 12vw;
 }
 
-#body {
-  background-color: rgb(255, 255, 255);
+#texteditor {
+  font-family: 'Fira Mono', monospace;
+  font-size: 2vw;
+  height: fit-content;
 }
 
 #cursor {
-  float:left;
-  height:fit-content;
+  font-family: 'Fira Mono', monospace;
+  font-size: 2vw;
+  height: fit-content;
 }
