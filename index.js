@@ -48,19 +48,37 @@ let writtenletters = 0;
 let space = 0;
 
 let insert;
+let go = 0;
 
 document.addEventListener('keydown', typeToDelete);
 counter1.innerHTML = "0";
 counter2.innerHTML = "0";
 counter3.innerHTML = "0";
 
-texteditor.addEventListener("keydown", function(event){
+texteditor.addEventListener('keydown', function(event){
   event.preventDefault()
 });
 
 
-function draw() {
 
+function draw() { 
+  millis = Date.now() - start;
+  seconds = Math.floor(millis / 1000);
+  if(go === 0){
+  if(seconds < 1){
+    texteditor.innerHTML = "3";
+  } else if(seconds < 2){
+    texteditor.innerHTML = "2";
+  } else if(seconds < 3){
+    texteditor.innerHTML = "1";
+  } else {
+    texteditor.innerHTML = "0";
+    go = 1;
+  }
+}
+
+ if(go === 1){
+  cursor.innerHTML = "_"; 
   if(frameCount >= speed) {
     editortext.push(text[letter]);
     showntext = editortext.join('');
@@ -72,9 +90,6 @@ function draw() {
 
   firstchar = editortext.slice(0,1);
   newtext = editortext;
-  
-  millis = Date.now() - start;
-  seconds = Math.floor(millis / 1000);
   counter3.innerHTML = seconds;
 
   if(editortext.length === 0 && frameCount > 1){
@@ -95,6 +110,7 @@ function draw() {
     ewidth = 0;
     noCanvas();
   }
+}
 }
 
 
