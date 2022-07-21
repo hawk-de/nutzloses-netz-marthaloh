@@ -39,7 +39,7 @@ let pressedkey = "";
 
 let ewidth = 0;
 
-const start = Date.now();
+let start = Date.now();
 let millis = 0;
 let seconds = 0;
 let deletedletters = 0;
@@ -62,20 +62,24 @@ texteditor.addEventListener('keydown', function(event){
 
 
 function draw() { 
+  
+  if(go === 0){
+    if(seconds < 1){
+      texteditor.innerHTML = "3";
+    } else if(seconds < 2){
+      texteditor.innerHTML = "2";
+    } else if(seconds < 3){
+      texteditor.innerHTML = "1";
+    } else if(seconds < 4){
+      texteditor.innerHTML = "0";
+    } else{
+      go = 1;
+      start = Date.now();
+    }
+  }
+
   millis = Date.now() - start;
   seconds = Math.floor(millis / 1000);
-  if(go === 0){
-  if(seconds < 1){
-    texteditor.innerHTML = "3";
-  } else if(seconds < 2){
-    texteditor.innerHTML = "2";
-  } else if(seconds < 3){
-    texteditor.innerHTML = "1";
-  } else {
-    texteditor.innerHTML = "0";
-    go = 1;
-  }
-}
 
  if(go === 1){
   cursor.innerHTML = "_"; 
