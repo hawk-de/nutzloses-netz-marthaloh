@@ -32,8 +32,24 @@ body {
   font-family: 'Fira Mono', monospace;
   font-size: 2vw;
   height: fit-content;
+  width: 2vw;
   margin-top: 8vw;
   margin-left: 1vw;
+  float:inline-start;
+  padding-top: 0;
+}
+
+#counter1 {
+}
+
+#counter2 {
+}
+
+#counter3 {
+}
+
+#counter4 {
+  
 }
 
 #div {
