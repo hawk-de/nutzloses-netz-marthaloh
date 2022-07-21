@@ -52,6 +52,11 @@ body {
   
 }
 
+[contenteditable] {
+  outline: 0px solid transparent;
+  caret-color: transparent;
+}
+
 #div {
   margin-top: 8vw;
   margin-bottom: 20px;

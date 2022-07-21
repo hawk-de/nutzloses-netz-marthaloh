@@ -54,22 +54,6 @@ counter1.innerHTML = "0";
 counter2.innerHTML = "0";
 counter3.innerHTML = "0";
 
-function setup() {
-  const deviceType = () => {
-    const ua = navigator.userAgent;
-    if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
-        return "tablet";
-    }
-    else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
-        return "mobile";
-    }
-    return "desktop";
-};
-
-if(deviceType === "tablet" || deviceType === "mobile"){
-  prompt();
-}
-}
 
 function draw() {
 
@@ -111,6 +95,7 @@ function draw() {
 
 
 function typeToDelete(e) {
+
   indent = 0; 
   ind = indent + "vw";
   div.style.setProperty("text-indent", ind);
@@ -163,6 +148,7 @@ function typeToDelete(e) {
 }
 
 function typeToWrite(e) {
+  
   if(background <= 50){
     texteditor.style.setProperty("color", "white");
     cursor.style.setProperty("color", "white");
