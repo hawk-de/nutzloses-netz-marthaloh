@@ -1,5 +1,5 @@
 html {
-  font-size: 100%;
+  font-size: 2.5vw;
 } /*16px*/
 
 body {
@@ -30,7 +30,6 @@ body {
 
 #counter {
   font-family: 'Fira Mono', monospace;
-  font-size: 2vw;
   height: fit-content;
   width: 2vw;
   margin-top: 8vw;
@@ -60,18 +59,15 @@ body {
 #div {
   margin-top: 8vw;
   margin-bottom: 20px;
-  margin-right: 12vw;
   margin-left: 12vw;
 }
 
 #texteditor {
   font-family: 'Fira Mono', monospace;
-  font-size: 2vw;
   height: fit-content;
 }
 
 #cursor {
   font-family: 'Fira Mono', monospace;
-  font-size: 2vw;
   height: fit-content;
 }

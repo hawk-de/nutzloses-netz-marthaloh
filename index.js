@@ -91,7 +91,7 @@ function draw() {
     for(ewidth = 0; ewidth < 100 || ewidth < 100; ewidth++){
       ellipse(100/2, 100/2, ewidth);
     }
-    body.style.setProperty("background-color", "rgb(20, 20, 20)");
+    //body.style.setProperty("background-color", "rgb(20, 20, 20)");
     ewidth = 0;
     noCanvas();
   }
