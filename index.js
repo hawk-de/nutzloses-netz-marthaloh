@@ -54,6 +54,10 @@ counter1.innerHTML = "0";
 counter2.innerHTML = "0";
 counter3.innerHTML = "0";
 
+texteditor.addEventListener("keydown", function(event){
+  event.preventDefault()
+});
+
 
 function draw() {
 
