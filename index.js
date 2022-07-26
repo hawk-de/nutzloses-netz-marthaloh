@@ -4,12 +4,6 @@
 /// <reference path="./node_modules/@types/p5/constants.d.ts" />
 
 
-//function preload() {
-  //let text1 = loadStrings('text1.txt');
-  //let text2 = loadStrings('text2.txt')
-//}
-
-
 const text1 = "Hallo! Ich bin ein nutzloser Texteditor. Hier kannst du deine Texte eintippen. Probier es aus! Finger auf die Tastatur und los geht es! Keine Scheu, schreib einfach drauf los.  Unterbrich mich ruhig. Doch sei gewarnt: Verärgere mich nicht zu sehr, sonst verweigere ich mich. Und lass mich nicht zu lange warten, ich bin sehr  ungeduldig und werde bei Langeweile schnell schludrig.";
 const text = text1.slice();
 let speed = 1;
@@ -25,9 +19,6 @@ let newtext;
 const texteditor = document.getElementById('texteditor');
 const cursor = document.getElementById('cursor');
 const counter1 = document.getElementById('counter1');
-const counter2 = document.getElementById('counter2');
-const counter3 = document.getElementById('counter3');
-const counter4 = document.getElementById('counter4');
 const body = document.getElementById('body');
 const div = document.getElementById('div');
 let indent = 0;
@@ -45,15 +36,13 @@ let seconds = 0;
 let deletedletters = 0;
 let writtenletters = 0;
 
-let space = 0;
-
 let insert;
 let go = 0;
+let about = 0;
+const abouttext = "about, about, about";
 
 document.addEventListener('keydown', typeToDelete);
 counter1.innerHTML = "0";
-counter2.innerHTML = "0";
-counter3.innerHTML = "0";
 
 texteditor.addEventListener('keydown', function(event){
   event.preventDefault()
@@ -81,7 +70,7 @@ function draw() {
   millis = Date.now() - start;
   seconds = Math.floor(millis / 1000);
 
- if(go === 1){
+ if(go === 1 && about < 3){
   cursor.innerHTML = "_"; 
   if(frameCount >= speed) {
     editortext.push(text[letter]);
@@ -90,30 +79,22 @@ function draw() {
     letter++;
     speed += random(10,15);
     counter1.innerHTML = showntext.length;
-  }
+  } 
 
   firstchar = editortext.slice(0,1);
   newtext = editortext;
-  counter3.innerHTML = seconds;
-
+ 
   if(editortext.length === 0 && frameCount > 1){
     noLoop();
     document.removeEventListener('keydown', typeToDelete);
     document.addEventListener('keydown', typeToWrite);
   }
 
-  if(text.length === editortext.length){
+  if(letter === text.length){
     noLoop();
-    document.removeEventListener('keydown', typeToDelete);
-    createCanvas(100, 100);
-    fill(0, 0, 0);
-    for(ewidth = 0; ewidth < 100 || ewidth < 100; ewidth++){
-      ellipse(100/2, 100/2, ewidth);
-    }
-    //body.style.setProperty("background-color", "rgb(20, 20, 20)");
-    ewidth = 0;
-    noCanvas();
   }
+} else if(about === 3){
+  texteditor.innerHTML = abouttext;
 }
 }
 
@@ -124,8 +105,15 @@ function typeToDelete(e) {
   ind = indent + "vw";
   div.style.setProperty("text-indent", ind);
 
-  console.log(e.key);
+  //console.log(e.key);
 
+if(e.key === "?"){
+  about++;
+} else {
+  about = 0;
+}
+
+if(letter < text.length){
   if(e.key === firstchar[0]){
     editortext.shift();
     showntext = editortext.join('');
@@ -135,7 +123,6 @@ function typeToDelete(e) {
     counter1.innerHTML = showntext.length;
     correct++;
     deletedletters++;
-    counter2.innerHTML = deletedletters;
   } else if(e.key !== "Shift"){
       correct = 0;
       add = Math.pow(2, fails);
@@ -146,7 +133,9 @@ function typeToDelete(e) {
         letter++;
         counter1.innerHTML = showntext.length;
       }
+      if(fails < 4){
       fails++;
+      }
     }
 
   if(correct === 15){
@@ -169,6 +158,11 @@ function typeToDelete(e) {
     ind = indent + "vw";
     div.style.setProperty("text-indent", ind);
   }
+} else {
+  console.log("time:", seconds, "seconds");
+  console.log("deleted letters:", deletedletters);
+  letter = 0;
+}
 }
 
 function typeToWrite(e) {
@@ -180,16 +174,6 @@ function typeToWrite(e) {
   
   pressedkey = e.key;
   insert = e.key;
-  
-
-  /*if(space > 0 && pressedkey.length === 1){
-    editortext[space] = e.key;
-    showntext = editortext.join('');
-    texteditor.innerHTML = showntext;
-    writtenletters++;
-    counter4.innerHTML = writtenletters;
-    space = 0;
-  } else*/
 
   if(e.key === "ä"){
     insert = "ääääääähh";
@@ -200,19 +184,12 @@ function typeToWrite(e) {
     showntext = editortext.join('');
     texteditor.innerHTML = showntext;
     writtenletters++;
-    counter4.innerHTML = writtenletters;
   }
-
-  /*if(e.code === "Space" && showntext.length > 3){
-    space = random(1,showntext.length-1);
-  }*/
 
   if(e.key === "Backspace" && editortext.length > 0){
     editortext.shift();
     showntext = editortext.join('');
     texteditor.innerHTML = showntext;
     writtenletters = writtenletters-1;
-    counter4.innerHTML = writtenletters;
   }
-
 }
