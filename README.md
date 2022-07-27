@@ -2,4 +2,4 @@
 ![](https://img.shields.io/badge/Built%20%40-HAWK-brightgreen?style=flat)
 # TypeToDelete
 
-TypeToDelete is a useless texteditor and a racing game. Try it and see if you can beat it. For more information visit typetodelete.com and type "???". The text I used is Jandl, Paul (2021): "Die Gewohnheit ist der Strick, mit dem wir uns aus der Komplexität der Welt ziehen. Wir lernen ein Leben lang, uns an das Leben zu gewöhnen. Doch die Routinen sind zweifelhafte Komplizen." Neue Zürcher Zeitung, abgerufen am 27.07.2022 von https://www.nzz.ch/feuilleton/gewohnheiten-wir-glauben-wir-leben-falsch-alles-nur-routine-ld.1610330
+TypeToDelete is a useless texteditor and a racing game. Try it and see if you can beat it. For more information visit ... and type *???*. The text I used is Jandl, Paul (2021): "Die Gewohnheit ist der Strick, mit dem wir uns aus der Komplexität der Welt ziehen. Wir lernen ein Leben lang, uns an das Leben zu gewöhnen. Doch die Routinen sind zweifelhafte Komplizen." Neue Zürcher Zeitung, accessed 27 July 2022, https://www.nzz.ch/feuilleton/gewohnheiten-wir-glauben-wir-leben-falsch-alles-nur-routine-ld.1610330
