@@ -9,6 +9,14 @@ body {
   color: #1d2429;
   float:left;
 }
+
+h3 {
+  font-size: 1.5vw;
+}
+
+p {
+  font-size: 1.5vw;
+}
 /*
  see A Complete Guide to Flexbox
   https://css-tricks.com/snippets/css/a-guide-to-flexbox/
@@ -60,6 +68,7 @@ body {
   margin-top: 8vw;
   margin-bottom: 20px;
   margin-left: 12vw;
+  margin-right: 4vw;
 }
 
 #texteditor {
