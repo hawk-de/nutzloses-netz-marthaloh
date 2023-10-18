@@ -1,12 +1,21 @@
 html {
-  font-size: 100%;
+  font-size: 2.5vw;
 } /*16px*/
 
 body {
-  background-color: white;
-  display: flex;
+  background-color: rgb(255,255,255);
+  /*display: flex;*/
   margin: 0 0;
   color: #1d2429;
+  float:left;
+}
+
+h3 {
+  font-size: 1.5vw;
+}
+
+p {
+  font-size: 1.5vw;
 }
 /*
  see A Complete Guide to Flexbox
@@ -14,10 +23,60 @@ body {
  */
 .container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  /*align-items: left;*/
+  /*justify-content: left;*/
   height: 100vh;
 }
 .flex-item {
-  align-self: center;
+  /*align-self: center;*/
+}
+
+
+#body {
+  background-color: rgb(255, 255, 255);
+}
+
+#counter {
+  font-family: 'Fira Mono', monospace;
+  height: fit-content;
+  width: 2vw;
+  margin-top: 8vw;
+  margin-left: 1vw;
+  float:inline-start;
+  padding-top: 0;
+}
+
+#counter1 {
+}
+
+#counter2 {
+}
+
+#counter3 {
+}
+
+#counter4 {
+  
+}
+
+[contenteditable] {
+  outline: 0px solid transparent;
+  caret-color: transparent;
+}
+
+#div {
+  margin-top: 8vw;
+  margin-bottom: 20px;
+  margin-left: 12vw;
+  margin-right: 2vw;
+}
+
+#texteditor {
+  font-family: 'Fira Mono', monospace;
+  height: fit-content;
+}
+
+#cursor {
+  font-family: 'Fira Mono', monospace;
+  height: fit-content;
 }
